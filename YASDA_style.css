@@ -1,0 +1,253 @@
+:root {
+  --green: #1e7a3a; /* primary */
+  --green-2: #2e9a50;
+  --accent: #f3f8f4;
+  --white: #ffffff;
+  --muted: #6b6b6b;
+  --container: 1200px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--accent);
+  color: #0b0b0b;
+  line-height: 1.45;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background: var(--white);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav a:hover {
+  text-decoration: underline;
+  transition: 0.5s;
+  color: green;
+  padding: 0%;
+}
+
+nav ul {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  color: #123;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(
+    90deg,
+    rgba(30, 122, 58, 0.06) 0%,
+    rgba(46, 154, 80, 0.02) 100%
+  );
+  padding: 48px 0;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 36px;
+  align-items: center;
+}
+.kicker {
+  display: inline-block;
+  background: var(--green);
+  color: var(--white);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+h1 {
+  margin: 12px 0 12px;
+  font-size: 38px;
+  line-height: 1.05;
+  color: var(--green);
+}
+p.lead {
+  margin: 0 0 20px;
+  color: var(--muted);
+}
+.cta {
+  display: flex;
+  gap: 12px;
+}
+.btn {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 700;
+}
+.btn-primary {
+  background: var(--green);
+  color: var(--white);
+}
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--green);
+  color: var(--green);
+}
+
+.hero-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(5, 30, 10, 0.06);
+}
+.hero-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Sections */
+section {
+  padding: 40px 0;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.card {
+  background: var(--white);
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* Executives list */
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+}
+.member {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, var(--green), var(--green-2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-weight: 800;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+.gallery .item {
+  height: 140px;
+  border-radius: 10px;
+  background: #eee;
+  display: block;
+  overflow: hidden;
+}
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Contact */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 18px;
+}
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.muted {
+  color: var(--muted);
+}
+
+footer {
+  padding: 28px 0;
+  background: var(--white);
+  margin-top: 28px;
+}
+
+/* WhatsApp floating */
+.wa-btn {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  background: #25d366;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.18);
+  z-index: 60;
+}
+.wa-btn img {
+  width: 28px;
+  height: 28px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+  nav ul {
+    display: none;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
